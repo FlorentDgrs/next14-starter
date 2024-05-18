@@ -4,7 +4,8 @@
   gap: 10px;
 }
 
-.button {
+.button,
+.logout {
   padding: 10px;
   cursor: pointer;
   font-weight: bold;

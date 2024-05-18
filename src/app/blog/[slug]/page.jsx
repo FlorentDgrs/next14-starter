@@ -14,18 +14,19 @@ const SinglePostPage = () => {
       </div>
       <div className={styles.textContainer}>
         <h1 className={styles.title}>Title</h1>
-        <div>
+        <div className={styles.details}>
           <Image
             src="https://images.pexels.com/photos/23508826/pexels-photo-23508826/free-photo-of-flamant-rose.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             alt=""
-            fill
+            width={50}
+            height={50}
             className={styles.avatar}
           />
-          <div className={styles.datailText}>
+          <div className={styles.detailText}>
             <span className={styles.detailTitle}>Author</span>
             <span className={styles.detailValue}>Florent</span>
           </div>
-          <div className={styles.datailText}>
+          <div className={styles.detailText}>
             <span className={styles.detailTitle}>Published</span>
             <span className={styles.detailValue}>01-01-2024</span>
           </div>
