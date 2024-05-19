@@ -29,7 +29,6 @@ const BlogPage = async () => {
           <PostCard post={post} />
         </div>
       ))}
-      ;
     </div>
   );
 };
