@@ -1,6 +1,7 @@
 //rfc create a component with snippet
 import { getUser } from "@/lib/data";
 import styles from "./postUser.module.css";
+import Image from "next/image";
 
 //FETCH DATA WITH AN API
 // const getData = async (userId) => {
@@ -25,8 +26,17 @@ const PostUser = async ({ userId }) => {
 
   return (
     <div className={styles.container}>
-      <span className={styles.title}>Author</span>
-      <span className={styles.userName}>{user.username}</span>
+      <Image
+        src={user.img ? user.img : "/noavatar.png"}
+        alt=""
+        width={50}
+        height={50}
+        className={styles.avatar}
+      />
+      <div className={styles.texts}>
+        <span className={styles.title}>Author</span>
+        <span className={styles.userName}>{user.username}</span>
+      </div>
     </div>
   );
 };

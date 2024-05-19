@@ -1,6 +1,6 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose from "mongoose";
 
-const userSchema = new Schema(
+const userSchema = new mongoose.Schema(
   {
     username: {
       type: String,
@@ -9,19 +9,18 @@ const userSchema = new Schema(
       min: 3,
       max: 20,
     },
-    email: { type: String, required: true, unique: true, max: 50 },
-    img: {
+    email: {
       type: String,
+      required: true,
+      unique: true,
+      max: 50,
     },
     password: {
       type: String,
-      require: true,
-      min: 6,
     },
     img: {
       type: String,
     },
-
     isAdmin: {
       type: Boolean,
       default: false,
@@ -30,21 +29,19 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
-const postSchema = new Schema(
+const postSchema = new mongoose.Schema(
   {
     title: {
       type: String,
       required: true,
     },
-    desc: { type: String, required: true },
+    desc: {
+      type: String,
+      required: true,
+    },
     img: {
       type: String,
     },
-
-    img: {
-      type: String,
-    },
-
     userId: {
       type: String,
       required: true,
@@ -58,5 +55,5 @@ const postSchema = new Schema(
   { timestamps: true }
 );
 
-export const User = mongoose.models.User || mongoose.model("User", userSchema);
-export const Post = mongoose.models.Post || mongoose.model("Post", postSchema);
+export const User = mongoose.models?.User || mongoose.model("User", userSchema);
+export const Post = mongoose.models?.Post || mongoose.model("Post", postSchema);
